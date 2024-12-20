@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saree Boutique</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .search-bar {
+      padding: 10px;
+      margin-top: 10px;
+      width: 250px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" >
+    
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="home" class="hero">
+    <h1>Welcome to Saree Boutique</h1>
+    <p>Explore the elegance of traditional and modern sarees.</p>
+    <a href="#collection" class="btn">Shop Now</a>
+  </section>
+
+  <!-- Search Bar Section -->
+  <section class="search-container">
+    <input type="text" id="search-bar" class="search-bar" placeholder="Search for sarees..." oninput="searchSarees()">
+  </section>
+
+  <div class="filter-container">
+    <label for="filter">Sort By:</label>
+    <select id="filter" onchange="applyFilter()">
+      <option value="default">Default</option>
+      <option value="high-to-low">Cost: High to Low</option>
+      <option value="low-to-high">Cost: Low to High</option>
+      <option value="a-z">Alphabetical A-Z</option>
+      <option value="z-a">Alphabetical Z-A</option>
+      <option value="best-selling">Best Selling</option>
+    </select>
+  </div>
+
+  <section id="collection">
+    <h2>Our Collection</h2>
+    <div class="gallery">
+      <div class="card" data-name="Silk Saree">
+        <img src="saree1.jpeg" alt="Saree 1">
+        <h3>Silk Saree</h3>
+        <p class="description">A luxurious silk saree for special occasions.</p> <!-- Description above the price -->
+        <h4>₹2,500</h4>
+        <button onclick="addToCart('Silk Saree',2500)">Add to Cart</button>
+      </div>
+      <div class="card" data-name="Cotton Saree">
+        <img src="saree2.jpeg" alt="Saree 2">
+        <h3>Cotton Saree</h3>
+        <p class="description">Comfortable cotton saree for everyday wear.</p> <!-- Description above the price -->
+        <h4>₹1,800</h4>
+        <button onclick="addToCart('Cotton Saree',1800)">Add to Cart</button>
+      </div>
+      <div class="card" data-name="Georgette Saree">
+        <img src="saree3.jpeg" alt="Saree 3">
+        <h3>Georgette Saree</h3>
+        <p class="description">Lightweight georgette saree with intricate designs.</p> <!-- Description above the price -->
+        <h4>₹2,200</h4>
+        <button onclick="addToCart('Georgette Saree',2200)">Add to Cart</button>
+      </div>
+      <div class="card" data-name="Banarasi Saree">
+        <img src="saree4.jpeg" alt="Saree 4">
+        <h3>Banarasi Saree</h3>
+        <p class="description">Elegant Banarasi saree with rich heritage motifs.</p> <!-- Description above the price -->
+        <h4>₹2,000</h4>
+        <button onclick="addToCart('Banarasi Saree',2000)">Add to Cart</button>
+      </div>
+      <div class="card" data-name="Paithani Saree">
+        <img src="saree5.jpeg" alt="Saree 5">
+        <h3>Paithani Saree</h3>
+        <p class="description">Beautiful Paithani saree with golden borders.</p> <!-- Description above the price -->
+        <h4>₹1,500</h4>
+        <button onclick="addToCart('Paithani Saree',1500)">Add to Cart</button>
+      </div>
+      <div class="card" data-name="Baluchari Saree">
+        <img src="saree6.jpeg" alt="Saree 6">
+        <h3>Baluchari Saree</h3>
+        <p class="description">Exclusive Baluchari saree with traditional patterns.</p> <!-- Description above the price -->
+        <h4>₹3,200</h4>
+        <button onclick="addToCart('Baluchari Saree',3200)">Add to Cart</button>
+      </div>
+      <div class="card" data-name="Bandhani Saree">
+        <img src="saree7.jpeg" alt="Saree 7">
+        <h3>Bandhani Saree</h3>
+        <p class="description">Vibrant Bandhani saree with a touch of tradition.</p> <!-- Description above the price -->
+        <h4>₹2,700</h4>
+        <button onclick="addToCart('Bandhani Saree',2700)">Add to Cart</button>
+      </div>
+      <div class="card" data-name="Pochampally Saree">
+        <img src="saree8.jpeg" alt="Saree 8">
+        <h3>Pochampally Saree</h3>
+        <p class="description">Modern Pochampally saree with beautiful prints.</p> <!-- Description above the price -->
+        <h4>₹2,200</h4>
+        <button onclick="addToCart('Pochampally Saree',2200)">Add to Cart</button>
+      </div>
+      <div class="card" data-name="Patola Saree">
+        <img src="saree9.jpeg" alt="Saree 9">
+        <h3>Patola Saree</h3>
+        <p class="description">Traditional Patola saree with rich colors.</p> <!-- Description above the price -->
+        <h4>₹2,200</h4>
+        <button onclick="addToCart('Patola Saree',2200)">Add to Cart</button>
+      </div>
+      <div class="card" data-name="Chikankari Saree">
+        <img src="saree10.jpeg" alt="Saree 10">
+        <h3>Chikankari Saree</h3>
+        <p class="description">Exquisite Chikankari saree with delicate embroidery.</p> <!-- Description above the price -->
+        <h4>₹2,200</h4>
+        <button onclick="addToCart('Chikankari Saree',2200)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are a brand where tradition meets modernity, offering an exquisite range of sarees that cater to every occasion, from casual wear to grand celebrations. Inspired by India’s rich cultural heritage, our designs blend timeless elegance with contemporary aesthetics, ensuring they resonate with the modern wearer. We take pride in our commitment to quality, using superior materials and expert craftsmanship to create sarees that stand out. Our mission is to make premium sarees accessible to everyone by offering them at affordable prices without compromising on elegance or durability. With a diverse collection of fabrics, patterns, and styles, we aim to provide something for every taste and preference. At the heart of our brand is a passion for celebrating the charm of sarees while adapting them to today’s lifestyle, helping you feel confident and graceful in every drape.We offer a wide range of sarees that combine tradition with modernity. Our goal is to provide quality products at affordable prices.</p>
+  </section>
+
+  <form action="done.html">
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+</form>
+
+  <footer>
+    <p>&copy; 2024 Saree Boutique. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Function to filter sarees based on search query
+    function searchSarees() {
+      const searchQuery = document.getElementById('search-bar').value.toLowerCase();
+      const sareeCards = document.querySelectorAll('.card');
+
+      sareeCards.forEach(card => {
+        const sareeName = card.getAttribute('data-name').toLowerCase();
+        if (sareeName.includes(searchQuery)) {
+          card.style.display = 'block'; // Show card
+        } else {
+          card.style.display = 'none'; // Hide card
+        }
+      });
+    }
+  </script>
+  <section id="cart" style="display: none;">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <button onclick="continueShopping()">Continue Shopping</button>
+    <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+  </section>
+</body>
+</html>

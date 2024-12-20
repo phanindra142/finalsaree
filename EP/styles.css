@@ -1,0 +1,327 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styling */
+header {
+  background-color:#AF1740;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header img {
+  width: 300px;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  padding: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav ul li a:hover {
+  color: #f39c12;
+  transition: color 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #f39c12;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  padding: 12px 30px;
+  background-color: #2d2d2d;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.hero .btn:hover {
+  background-color: #f39c12;
+  transition: background-color 0.3s ease;
+}
+
+/* Search Bar Section */
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search-bar {
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-bar:focus {
+  border-color: #f39c12;
+}
+
+/* Filter Section */
+.filter-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.filter-container select {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.filter-container select:focus {
+  border-color: #f39c12;
+}
+
+/* Collection Section */
+#collection {
+  padding: 40px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+#collection h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 220px;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 16px;
+  color: #f39c12;
+}
+
+.card button {
+  padding: 10px 20px;
+  background-color: #2d2d2d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.card button:hover {
+  background-color: #f39c12;
+  transition: background-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section */
+#about {
+  padding: 40px 20px;
+  text-align: center;
+  background-color:aqua;
+}
+
+#about h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Contact Section */
+#contact {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+#contact h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#contact input,
+#contact textarea {
+  padding: 12px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#contact textarea {
+  height: 100px;
+  resize: none;
+}
+
+#contact button {
+  padding: 12px 30px;
+  background-color: #2d2d2d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#contact button:hover {
+  background-color: #f39c12;
+  transition: background-color 0.3s ease;
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  background-color: #2d2d2d;
+  color: white;
+  padding: 20px;
+}
+
+footer p {
+  font-size: 14px;
+}
+/* Logo Container */
+header img {
+  width: 300px; /* Adjust the size of the logo */
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px; /* Optional: To give a rounded effect to the logo */
+  cursor: pointer; /* Cursor change to indicate interactivity */
+}
+
+/* Hover Effect */
+header img:hover {
+  transform: scale(1.1); /* Slightly enlarge the logo when hovered */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add a soft glow effect */
+}
+
+/* Logo Animation on Page Load */
+@keyframes logoAnimation {
+  0% {
+    transform: scale(0.8); /* Start with a smaller size */
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1); /* Enlarge the logo */
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1); /* Reset to original size */
+    opacity: 1;
+  }
+}
+
+/* Apply animation */
+header img {
+  animation: logoAnimation 1s ease-in-out;
+}
+
+/* Additional Logo Style for a Glow Effect (Optional) */
+header img {
+  position: relative;
+  z-index: 1;
+}
+
+header img:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6));
+  border-radius: 15px; /* Round edges for the glow */
+  z-index: -1;
+  animation: logoGlow 1.5s infinite alternate;
+}
+
+@keyframes logoGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 80px rgba(255, 255, 255, 0.6);
+  }
+}

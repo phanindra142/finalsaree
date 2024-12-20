@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<form action="index.html">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Login</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #2d132c; /* Deep Purple Background */
+      color: #f5e9e2; /* Soft Neutral Text Color */
+    }
+    
+    header {
+      background-color: #532e71; /* Rich Royal Purple */
+      color: #f7dba7; /* Gold Accent */
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      font-family: 'Palatino Linotype', serif;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #f7dba7; /* Gold Accent */
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+      color: #ffe4c4; /* Lighter Gold Hover Effect */
+    }
+
+    form {
+      background-color:#3E5879; /* Dark Purple */
+      padding: 30px;
+      margin: 100px auto;
+      width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      color: #f5e9e2; /* Soft Text */
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #f7dba7; /* Gold */
+    }
+
+    input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #d4af37; /* Gold Border */
+      border-radius: 8px;
+      background-color: #f5e9e2; /* Light Background */
+      color: #2d132c; /* Dark Text for Input */
+    }
+
+    input[type="email"]:focus, input[type="password"]:focus {
+      border-color: #f7dba7; /* Focused Border Gold */
+      outline: none;
+      box-shadow: 0 0 8px rgba(247, 219, 167, 0.6); /* Soft Glow */
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #d4af37; /* Royal Gold */
+      color: #2d132c; /* Contrast Dark Text */
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2em;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #f7dba7; /* Lighter Gold Hover */
+      color: #3c1f47; /* Dark Purple Text */
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background-color:#3E5879; /* Rich Royal Purple */
+      color: #f7dba7; /* Gold Accent */
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      font-size: 0.9em;
+    }
+  </style>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Saree Boutique</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <form id="login-form">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+  
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+  
+    <button type="submit">Login</button>
+  </form>
+  
+  <script>
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+  
+      try {
+        const response = await fetch('http://localhost:5000/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        });
+  
+        const data = await response.json();
+        if (response.ok) {
+          alert('Login successful!');
+          localStorage.setItem('token', data.token);  // Save JWT for authenticated requests
+          window.location.href = 'index.html';       // Redirect to the home page
+        } else {
+          alert('Login failed.');
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  </script>
+  
+
+  <footer>
+    <p>&copy; 2024 Saree Boutique. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</form>
+</html>
